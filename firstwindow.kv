@@ -1,0 +1,24 @@
+# firstwindow.kv
+<FirstWindow>:
+    name: "first"
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(48)
+
+        MDTextField:
+            id: task_input
+            hint_text: "Enter a task"
+            size_hint_y: None
+            height: dp(48)
+
+        MDRaisedButton:
+            text: "Add Task"
+            size_hint_y: None
+            height: dp(48)
+            on_release: root.add_task()
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                id: task_list
